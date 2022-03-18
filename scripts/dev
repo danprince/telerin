@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+let esbuild = require("esbuild");
+let buildOptions = require("./build");
+
+esbuild.serve({
+  servedir: "example"
+}, {
+  ...buildOptions,
+  entryPoints: ["example/example.ts"],
+  outfile: "example/example.js",
+}).then(result => {
+  console.log(`http://localhost:${result.port}`);
+});

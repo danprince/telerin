@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+let esbuild = require("esbuild");
+
+/**
+ * @type {esbuild.BuildOptions}
+ */
+let options = {
+  entryPoints: ["index.ts"],
+  bundle: true,
+  minify: true,
+  sourcemap: true,
+  loader: { ".png": "dataurl" },
+  format: "esm",
+  outfile: "dist/telerin.js",
+};
+
+if (require.main) {
+  esbuild.buildSync(options);
+}
+
+module.exports = options;
