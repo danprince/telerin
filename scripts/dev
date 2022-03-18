@@ -7,6 +7,7 @@ esbuild.serve({
   servedir: "example"
 }, {
   ...buildOptions,
+  minify: false,
   entryPoints: ["example/example.ts"],
   outfile: "example/example.js",
 }).then(result => {

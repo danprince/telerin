@@ -6,7 +6,7 @@ let esbuild = require("esbuild");
  * @type {esbuild.BuildOptions}
  */
 let options = {
-  entryPoints: ["index.ts"],
+  entryPoints: ["lowlevel.ts"],
   bundle: true,
   minify: true,
   sourcemap: true,
