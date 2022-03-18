@@ -9,7 +9,7 @@ esbuild.serve({
   ...buildOptions,
   minify: false,
   entryPoints: ["example/example.ts"],
-  outfile: "example/example.js",
+  outdir: "example",
 }).then(result => {
   console.log(`http://localhost:${result.port}`);
 });
