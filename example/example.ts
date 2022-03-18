@@ -24,9 +24,6 @@ onmousemove = e => {
   m = t.screenToGrid(e.clientX, e.clientY);
 }
 
-let code = "";
-fetch("example.js").then(res => res.text()).then(t => code = t);
-
 function start() {
   drawBackground();
   loop();

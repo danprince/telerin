@@ -2,16 +2,22 @@
   "name": "telerin",
   "description": "Fast terminal/tileset renderer",
   "version": "0.0.0",
-  "main": "dist/telerin.js",
+  "main": "dist/index.js",
   "repository": "git@github.com:danprince/silmarils.git",
   "license": "MIT",
   "scripts": {
     "dev": "./scripts/dev",
     "build": "./scripts/build",
-    "prepublishOnly": "yarn build"
+    "typecheck": "tsc --noEmit",
+    "declarations": "tsc --declaration --emitDeclarationOnly",
+    "prepublishOnly": "yarn typecheck && yarn build"
   },
   "devDependencies": {
     "esbuild": "^0.14.27",
     "typescript": "^4.6.2"
-  }
+  },
+  "files": [
+    "dist",
+    "index.ts"
+  ]
 }

@@ -6,13 +6,13 @@ let esbuild = require("esbuild");
  * @type {esbuild.BuildOptions}
  */
 let options = {
-  entryPoints: ["lowlevel.ts"],
+  entryPoints: ["index.ts"],
   bundle: true,
   minify: true,
   sourcemap: true,
   loader: { ".png": "dataurl" },
   format: "esm",
-  outfile: "dist/telerin.js",
+  outdir: "dist",
 };
 
 if (require.main) {
