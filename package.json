@@ -10,7 +10,7 @@
     "build": "./scripts/build",
     "typecheck": "tsc --noEmit",
     "declarations": "tsc --declaration --emitDeclarationOnly",
-    "prepublishOnly": "yarn typecheck && yarn build"
+    "prepublishOnly": "yarn declarations && yarn build"
   },
   "devDependencies": {
     "esbuild": "^0.14.27",
@@ -18,6 +18,6 @@
   },
   "files": [
     "dist",
-    "index.ts"
+    "src"
   ]
 }

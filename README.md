@@ -1,4 +1,6 @@
-# Telerin
+<p align="center"><img src="logo.png" height="32" alt="Logo" /></p>
+<h1 align="center">Telerin</h1>
+<p align="center"><a href="https://npmjs.com/package/telerin"><img src="https://img.shields.io/npm/v/telerin.svg?label=&color=000"  alt="npm version" /></a></p>
 
 Terminal/tileset renderer for web based games.
 

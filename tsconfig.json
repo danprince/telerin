@@ -9,6 +9,8 @@
     "esModuleInterop": true,
     "noUnusedLocals": true,
     "noImplicitReturns": true,
-    "outDir": "dist"
-  }
+    "outDir": "dist",
+    "baseUrl": "src"
+  },
+  "include": ["src"]
 }

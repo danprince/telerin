@@ -1,4 +1,4 @@
-import { Terminal } from "..";
+import { Terminal } from "../src";
 
 const BOX_DRAWING_EXAMPLE = `
 ┌─┬┐  ╔═╦╗  ╓─╥╖  ╒═╤╕
