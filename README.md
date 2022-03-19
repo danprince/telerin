@@ -4,7 +4,7 @@ Terminal/tileset renderer for web based games.
 
 * Configuration: [`constructor`](#constructor) [`codepage`](#codepage), [`scale`](#scale)
 * State: [`layer`](#layer), [`color`](#color), [`background`](#background)
-* Methods: [`clear`](#clear), [`clearLayer`](#clearLayer), [`clip`](#clip), [`put`](#put), [`write`](#write), [`box`](#box), [`refresh`](refresh), [`screenToGrid`](#screenToGrid)
+* Methods: [`clear`](#clear), [`clearLayer`](#clearLayer), [`clip`](#clip), [`put`](#put), [`write`](#write), [`box`](#box), [`refresh`](#refresh), [`screenToGrid`](#screenToGrid)
 
 ## Example
 
