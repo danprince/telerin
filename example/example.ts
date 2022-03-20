@@ -24,10 +24,8 @@ onmousemove = e => {
   m = t.screenToGrid(e.clientX, e.clientY);
 }
 
-function start() {
-  drawBackground();
-  loop();
-}
+drawBackground();
+loop();
 
 function drawBackground() {
   t.layer = 1;
@@ -59,6 +57,5 @@ function loop() {
   t.refresh();
 }
 
-t.tileset.onload = start;
 t.canvas.style.background = "black";
 document.body.append(t.canvas);

@@ -18,9 +18,7 @@ term.color = "red";
 term.background = "#0000FF";
 term.put(0, 0, 0x10);
 term.write(10, 10, "Hello world");
-
-// Wait for the tileset to load before rendering
-term.tileset.onload = () => term.refresh();
+term.refresh();
 
 // Make the canvas visible
 document.body.append(term.canvas);

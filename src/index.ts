@@ -1,4 +1,4 @@
-import defaultFontUrl from "./font.png";
+import defaultTilesetUrl from "./font.png";
 
 type TileSet = HTMLImageElement | HTMLCanvasElement;
 
@@ -112,12 +112,16 @@ export class Terminal {
   constructor(
     width: number,
     height: number,
-    url: string = defaultFontUrl,
+    url: string = defaultTilesetUrl,
     cellWidth = 6,
     cellHeight = 6,
   ) {
     let tileset = new Image();
     tileset.src = url;
+
+    // Draw anything that was buffered before the tileset loaded
+    tileset.addEventListener("load", () => this.refresh());
+
     let canvas = document.createElement("canvas");
     let ctx = canvas.getContext("2d")!;
     canvas.width = width * cellWidth;
@@ -246,7 +250,10 @@ export class Terminal {
    * Renders the terminal to the canvas.
    */
   refresh() {
-    let { canvas, ctx, tileset: font, width, cellWidth, cellHeight } = this;
+    // Can't render unless the tileset has loaded
+    if (this.tileset.width === 0) return;
+
+    let { canvas, ctx, tileset, width, cellWidth, cellHeight } = this;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     for (let layer of this.layers) {
@@ -261,8 +268,8 @@ export class Terminal {
           let bg = buffer[i++];
           let offsetX = buffer[i++];
           let offsetY = buffer[i++];
-          let img: HTMLImageElement | HTMLCanvasElement = font;
-          let cols = font.width / cellWidth;
+          let img: HTMLImageElement | HTMLCanvasElement = tileset;
+          let cols = tileset.width / cellWidth;
           let cw = cellWidth;
           let ch = cellHeight;
           let sx = (code % cols) * cw;
