@@ -156,7 +156,7 @@ Converts a point on the screen to terminal grid coordinates.
 
 ```ts
 onmousemove = event => {
-  let { x, y } = terminal.screenToGrid(event.x, event.y);
+  let { x, y } = terminal.screenToGrid(event.clientX, event.clientY);
   // x, y are rounded grid coordinates
 }
 ```
